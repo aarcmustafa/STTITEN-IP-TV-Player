@@ -1,6 +1,5 @@
 package com.sttiten.iptv.data.parser.xtream
 
-import com.sttiten.iptv.data.api.OkhttpClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow

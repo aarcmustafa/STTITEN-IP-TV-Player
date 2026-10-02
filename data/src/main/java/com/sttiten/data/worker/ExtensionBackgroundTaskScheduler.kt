@@ -9,10 +9,6 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.await
 import androidx.work.workDataOf
-import com.sttiten.iptv.extension.api.ExtensionBackgroundTaskDeclaration
-import com.sttiten.iptv.extension.api.ExtensionId
-import com.sttiten.iptv.extension.api.ExtensionManifest
-import com.sttiten.iptv.extension.api.HostHookSpecs
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import javax.inject.Singleton

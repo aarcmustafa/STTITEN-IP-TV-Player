@@ -6,8 +6,6 @@ import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyPermanentlyInvalidatedException
 import android.security.keystore.KeyProperties
 import android.util.Base64
-import com.sttiten.iptv.data.database.model.ProviderCredentialEntity
-import com.sttiten.iptv.extension.api.security.CredentialHandle
 import java.nio.charset.StandardCharsets
 import java.security.InvalidKeyException
 import java.security.KeyStore

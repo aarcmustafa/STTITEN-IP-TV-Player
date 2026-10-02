@@ -1,8 +1,5 @@
 package com.sttiten.iptv.data.tv.http
 
-import com.sttiten.iptv.data.tv.http.endpoint.Playlists
-import com.sttiten.iptv.data.tv.http.endpoint.Remotes
-import com.sttiten.iptv.data.tv.http.endpoint.SayHellos
 import io.ktor.serialization.kotlinx.KotlinxWebsocketSerializationConverter
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application

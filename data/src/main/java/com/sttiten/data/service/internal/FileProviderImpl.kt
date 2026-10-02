@@ -4,8 +4,6 @@ import android.content.Context
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.os.Build
-import com.sttiten.iptv.core.foundation.architecture.FileProvider
-import com.sttiten.iptv.core.foundation.util.collections.forEachNotNull
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
 import java.io.PrintWriter

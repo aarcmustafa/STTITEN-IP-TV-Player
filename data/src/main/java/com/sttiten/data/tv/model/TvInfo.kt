@@ -2,7 +2,6 @@ package com.sttiten.iptv.data.tv.model
 
 import androidx.annotation.Keep
 import androidx.compose.runtime.Immutable
-import com.sttiten.iptv.core.foundation.architecture.Abi
 import kotlinx.serialization.Serializable
 
 @Keep

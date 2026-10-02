@@ -1,6 +1,5 @@
 package com.sttiten.iptv.data.service.internal
 
-import com.sttiten.iptv.data.repository.provider.ProviderPlaybackSession
 
 /**
  * Owns the association between one logical playback generation and its provider session.

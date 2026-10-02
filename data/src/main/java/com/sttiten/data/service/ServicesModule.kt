@@ -15,17 +15,6 @@ import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.SimpleCache
 import androidx.media3.exoplayer.offline.DownloadManager
 import androidx.work.WorkManager
-import com.sttiten.iptv.core.foundation.architecture.FileProvider
-import com.sttiten.iptv.core.foundation.architecture.preferences.Settings
-import com.sttiten.iptv.core.foundation.architecture.preferences.settings
-import com.sttiten.iptv.data.service.internal.DPadReactionServiceImpl
-import com.sttiten.iptv.data.service.internal.FileProviderImpl
-import com.sttiten.iptv.data.service.internal.MessagerImpl
-import com.sttiten.iptv.data.service.internal.PlayerManagerImpl
-import com.sttiten.iptv.data.tv.http.HttpServer
-import com.sttiten.iptv.data.tv.http.HttpServerImpl
-import com.sttiten.iptv.data.tv.nsd.NsdDeviceManager
-import com.sttiten.iptv.data.tv.nsd.NsdDeviceManagerImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

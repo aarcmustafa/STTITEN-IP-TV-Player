@@ -2,11 +2,6 @@ package com.sttiten.iptv.data.repository.playlist
 
 import android.net.Uri
 import androidx.compose.runtime.Immutable
-import com.sttiten.iptv.data.database.model.DataSource
-import com.sttiten.iptv.data.database.model.Playlist
-import com.sttiten.iptv.data.database.model.PlaylistWithChannels
-import com.sttiten.iptv.data.database.model.Channel
-import com.sttiten.iptv.data.parser.xtream.XtreamEpisodeInfo
 import kotlinx.coroutines.flow.Flow
 import java.util.UUID
 

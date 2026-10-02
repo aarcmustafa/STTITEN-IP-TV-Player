@@ -1,8 +1,6 @@
 package com.sttiten.iptv.data.service.internal
 
 import androidx.compose.runtime.Immutable
-import com.sttiten.iptv.data.service.DPadReactionService
-import com.sttiten.iptv.data.tv.model.RemoteDirection
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import javax.inject.Inject

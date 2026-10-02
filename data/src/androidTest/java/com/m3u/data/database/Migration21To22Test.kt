@@ -7,9 +7,6 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.sttiten.iptv.data.database.model.ProviderCredentialEntity
-import com.sttiten.iptv.data.extension.security.CredentialVault
-import com.sttiten.iptv.extension.api.security.CredentialHandle
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Rule

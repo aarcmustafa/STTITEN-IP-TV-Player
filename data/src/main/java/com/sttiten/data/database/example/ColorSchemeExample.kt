@@ -1,7 +1,6 @@
 package com.sttiten.iptv.data.database.example
 
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.sttiten.iptv.data.database.model.ColorScheme
 
 object ColorSchemeExample {
     val schemes = listOf(

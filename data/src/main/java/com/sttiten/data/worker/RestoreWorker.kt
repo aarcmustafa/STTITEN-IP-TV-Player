@@ -9,9 +9,6 @@ import androidx.hilt.work.HiltWorker
 import androidx.work.CoroutineWorker
 import androidx.work.ForegroundInfo
 import androidx.work.WorkerParameters
-import com.sttiten.iptv.data.R
-import com.sttiten.iptv.data.repository.playlist.PlaylistRepository
-import com.sttiten.iptv.i18n.R.string
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.CancellationException

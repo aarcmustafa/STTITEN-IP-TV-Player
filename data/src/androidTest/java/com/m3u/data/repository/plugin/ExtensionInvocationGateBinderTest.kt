@@ -4,26 +4,6 @@ import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.sttiten.iptv.core.foundation.architecture.preferences.PreferencesKeys
-import com.sttiten.iptv.core.foundation.architecture.preferences.settings
-import com.sttiten.iptv.data.extension.security.ActiveExtensionPrincipalRegistry
-import com.sttiten.iptv.data.extension.security.ExtensionPrincipal
-import com.sttiten.iptv.data.extension.security.ProviderHostNetworkBroker
-import com.sttiten.iptv.data.extension.security.toPrincipal
-import com.sttiten.iptv.extension.api.ChannelMetadataSnapshot
-import com.sttiten.iptv.extension.api.ExtensionApiVersions
-import com.sttiten.iptv.extension.api.ExtensionCapabilityIds
-import com.sttiten.iptv.extension.api.ExtensionId
-import com.sttiten.iptv.extension.api.HostHookSpecs
-import com.sttiten.iptv.extension.api.Hook
-import com.sttiten.iptv.extension.api.InvocationId
-import com.sttiten.iptv.extension.api.MetadataEnrichmentRequest
-import com.sttiten.iptv.extension.api.SerializedExtensionEnvelope
-import com.sttiten.iptv.extension.api.security.BrokerScopeHandle
-import com.sttiten.iptv.extension.api.security.BrokeredHttpRequest
-import com.sttiten.iptv.extension.api.security.BrokeredHttpResponse
-// import com.sttiten.iptv.extension.transport.android.AndroidExtensionDiscovery
-// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement

@@ -1,8 +1,5 @@
 package com.sttiten.iptv.data.extension.security
 
-import com.sttiten.iptv.data.database.model.ProviderAccount
-import com.sttiten.iptv.extension.api.ExtensionId
-import com.sttiten.iptv.extension.transport.android.InstalledExtensionService
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.sync.Mutex

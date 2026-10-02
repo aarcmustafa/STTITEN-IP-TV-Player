@@ -1,13 +1,6 @@
 package com.sttiten.iptv.data.repository.channel
 
 import androidx.paging.PagingSource
-import com.sttiten.iptv.core.foundation.architecture.preferences.Settings
-import com.sttiten.iptv.core.foundation.wrapper.Sort
-import com.sttiten.iptv.data.database.dao.ChannelDao
-import com.sttiten.iptv.data.database.dao.PlaylistDao
-import com.sttiten.iptv.data.database.model.AdjacentChannels
-import com.sttiten.iptv.data.database.model.Channel
-import com.sttiten.iptv.data.repository.playlist.PlaylistDataMaintenanceCoordinator
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import javax.inject.Inject

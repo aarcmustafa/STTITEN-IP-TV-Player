@@ -1,6 +1,5 @@
 package com.sttiten.iptv.data.codec
 
-import com.sttiten.iptv.data.BuildConfig
 
 object CodecPackConfig {
     const val DIRECTORY = "codec-packs"

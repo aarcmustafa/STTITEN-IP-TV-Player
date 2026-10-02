@@ -1,6 +1,5 @@
 package com.sttiten.iptv.data.parser.xtream
 
-import com.sttiten.iptv.data.database.model.Channel
 
 typealias XtreamData = dev.oxyroid.parser.xtream.XtreamData
 typealias XtreamLive = dev.oxyroid.parser.xtream.XtreamLive

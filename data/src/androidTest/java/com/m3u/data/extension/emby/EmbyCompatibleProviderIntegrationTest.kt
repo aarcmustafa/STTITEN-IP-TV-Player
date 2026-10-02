@@ -4,11 +4,6 @@ import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.sttiten.iptv.core.foundation.architecture.Abi
-import com.sttiten.iptv.core.foundation.architecture.Publisher
-import com.sttiten.iptv.extension.api.subscription.EmbyCompatibleProviderKinds
-import com.sttiten.iptv.extension.api.subscription.PlaybackPreferences
-import com.sttiten.iptv.extension.api.subscription.ProviderKind
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.Request

@@ -1,6 +1,5 @@
 package com.sttiten.iptv.data.parser.epg
 
-import com.sttiten.iptv.data.database.model.Programme
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatterBuilder
 

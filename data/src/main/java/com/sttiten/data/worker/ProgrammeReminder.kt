@@ -13,10 +13,6 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import com.sttiten.iptv.data.R
-import com.sttiten.iptv.data.repository.media.MediaRepository
-import com.sttiten.iptv.data.repository.programme.ProgrammeRepository
-import com.sttiten.iptv.i18n.R.string
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import java.util.concurrent.TimeUnit

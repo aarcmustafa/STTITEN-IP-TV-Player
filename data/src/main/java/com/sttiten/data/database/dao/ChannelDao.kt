@@ -8,10 +8,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
-import com.sttiten.iptv.data.database.model.AdjacentChannels
-import com.sttiten.iptv.data.database.model.Channel
-import com.sttiten.iptv.data.database.model.ChannelMetadataBase
-import com.sttiten.iptv.data.database.model.ExtensionChannelMetadataOverlay
 import kotlinx.coroutines.flow.Flow
 
 @Dao

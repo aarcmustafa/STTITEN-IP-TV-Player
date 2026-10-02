@@ -1,7 +1,6 @@
 package com.sttiten.iptv.data.database
 
 import androidx.room.TypeConverter
-import com.sttiten.iptv.data.database.model.DataSource
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 

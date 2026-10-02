@@ -1,6 +1,5 @@
 package com.sttiten.iptv.data.extension.security
 
-import com.sttiten.iptv.extension.api.ExtensionNetworkOrigin
 import okhttp3.HttpUrl.Companion.toHttpUrl
 
 internal fun String.toCanonicalHttpOrigin(): String {

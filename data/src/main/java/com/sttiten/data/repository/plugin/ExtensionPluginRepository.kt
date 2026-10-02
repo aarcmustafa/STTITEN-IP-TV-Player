@@ -1,9 +1,5 @@
 package com.sttiten.iptv.data.repository.plugin
 
-import com.sttiten.iptv.data.repository.extension.ExtensionNetworkOriginState
-import com.sttiten.iptv.data.repository.extension.ExtensionSettingNetworkOrigin
-import com.sttiten.iptv.extension.api.ExtensionManifest
-import com.sttiten.iptv.extension.api.ExtensionState
 
 interface ExtensionPluginRepository {
     suspend fun installedPlugins(): List<InstalledPlugin>

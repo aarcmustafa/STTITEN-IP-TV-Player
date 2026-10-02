@@ -4,23 +4,6 @@ import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.sttiten.iptv.data.database.dao.ChannelDao
-import com.sttiten.iptv.data.database.dao.ColorSchemeDao
-import com.sttiten.iptv.data.database.dao.EpisodeDao
-import com.sttiten.iptv.data.database.dao.PlaylistDao
-import com.sttiten.iptv.data.database.dao.ProgrammeDao
-import com.sttiten.iptv.data.database.dao.ProviderDao
-import com.sttiten.iptv.data.database.model.Channel
-import com.sttiten.iptv.data.database.model.ChannelMetadataBase
-import com.sttiten.iptv.data.database.model.ChannelPlaybackReference
-import com.sttiten.iptv.data.database.model.ColorScheme
-import com.sttiten.iptv.data.database.model.Episode
-import com.sttiten.iptv.data.database.model.ExtensionChannelMetadataOverlay
-import com.sttiten.iptv.data.database.model.Playlist
-import com.sttiten.iptv.data.database.model.Programme
-import com.sttiten.iptv.data.database.model.ProviderAccount
-import com.sttiten.iptv.data.database.model.ProviderCredentialEntity
-import com.sttiten.iptv.data.database.model.ProviderPlaybackSessionEntity
 
 @Database(
     entities = [

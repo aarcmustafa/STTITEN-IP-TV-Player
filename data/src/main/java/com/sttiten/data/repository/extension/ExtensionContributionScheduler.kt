@@ -12,12 +12,6 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.await
 import androidx.work.workDataOf
-import com.sttiten.iptv.data.worker.ExtensionContributionRefreshWorker
-import com.sttiten.iptv.extension.api.ExtensionState
-import com.sttiten.iptv.extension.api.HostHookSpecs
-import com.sttiten.iptv.extension.runtime.ExtensionExecutionKind
-import com.sttiten.iptv.extension.runtime.ExtensionRuntime
-// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import java.security.MessageDigest
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject

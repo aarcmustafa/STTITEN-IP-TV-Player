@@ -1,6 +1,5 @@
 package com.sttiten.iptv.data.repository.playlist
 
-import com.sttiten.iptv.data.repository.provider.ProviderLifecycleCoordinator
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.coroutines.AbstractCoroutineContextElement

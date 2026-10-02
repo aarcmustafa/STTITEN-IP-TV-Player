@@ -2,7 +2,6 @@ package com.sttiten.iptv.data.worker
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.work.workDataOf
-import com.sttiten.iptv.extension.api.subscription.SubscriptionRefreshReason
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test

@@ -1,10 +1,5 @@
 package com.sttiten.iptv.data.repository.extension
 
-import com.sttiten.iptv.extension.api.ExtensionId
-import com.sttiten.iptv.extension.api.ExtensionSettingKeys
-import com.sttiten.iptv.extension.api.ExtensionSettingSection
-import com.sttiten.iptv.extension.api.ExtensionSettingsSnapshot
-import com.sttiten.iptv.extension.runtime.ExtensionRegistrationLease
 
 interface ExtensionSettingsRepository {
     suspend fun configuration(

@@ -1,7 +1,6 @@
 package com.sttiten.iptv.data.parser.m3u
 
 import androidx.core.net.toUri
-import com.sttiten.iptv.data.database.model.Channel
 import dev.oxyroid.parser.protocol.ParsedChannel
 
 internal typealias M3UData = ParsedChannel

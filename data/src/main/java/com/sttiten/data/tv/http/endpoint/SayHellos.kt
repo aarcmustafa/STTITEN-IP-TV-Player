@@ -1,7 +1,5 @@
 package com.sttiten.iptv.data.tv.http.endpoint
 
-import com.sttiten.iptv.core.foundation.architecture.Publisher
-import com.sttiten.iptv.data.tv.model.TvInfo
 import io.ktor.server.response.respond
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.get

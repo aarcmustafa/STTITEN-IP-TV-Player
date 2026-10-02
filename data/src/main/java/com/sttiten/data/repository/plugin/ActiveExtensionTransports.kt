@@ -1,8 +1,5 @@
 package com.sttiten.iptv.data.repository.plugin
 
-import com.sttiten.iptv.extension.runtime.ExtensionRegistrationLease
-import com.sttiten.iptv.extension.runtime.ExtensionRegistrationToken
-import com.sttiten.iptv.extension.transport.android.InstalledExtensionService
 import java.util.concurrent.ConcurrentHashMap
 
 internal data class ExtensionServiceKey(

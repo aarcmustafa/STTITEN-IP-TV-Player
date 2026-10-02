@@ -5,10 +5,6 @@ import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
-import com.sttiten.iptv.data.database.model.DataSource
-import com.sttiten.iptv.data.database.model.Playlist
-import com.sttiten.iptv.data.database.model.PlaylistWithChannels
-import com.sttiten.iptv.data.database.model.PlaylistWithCount
 import kotlinx.coroutines.flow.Flow
 
 @Dao

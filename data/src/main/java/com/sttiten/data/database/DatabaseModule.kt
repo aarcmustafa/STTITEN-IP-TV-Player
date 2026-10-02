@@ -6,14 +6,6 @@ import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.sttiten.iptv.data.database.dao.ChannelDao
-import com.sttiten.iptv.data.database.dao.ColorSchemeDao
-import com.sttiten.iptv.data.database.dao.EpisodeDao
-import com.sttiten.iptv.data.database.dao.PlaylistDao
-import com.sttiten.iptv.data.database.dao.ProgrammeDao
-import com.sttiten.iptv.data.database.dao.ProviderDao
-import com.sttiten.iptv.data.database.example.ColorSchemeExample
-import com.sttiten.iptv.data.extension.security.CredentialVault
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

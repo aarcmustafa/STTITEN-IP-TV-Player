@@ -1,10 +1,5 @@
 package com.sttiten.iptv.data.repository.provider
 
-import com.sttiten.iptv.extension.api.ExtensionId
-import com.sttiten.iptv.extension.api.security.CredentialHandle
-import com.sttiten.iptv.extension.api.subscription.ProviderKind
-import com.sttiten.iptv.extension.api.subscription.SubscriptionProviderDescriptor
-import com.sttiten.iptv.extension.api.subscription.SubscriptionRefreshReason
 import kotlinx.coroutines.flow.Flow
 
 interface SubscriptionProviderRepository {

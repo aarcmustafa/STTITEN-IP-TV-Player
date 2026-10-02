@@ -1,9 +1,6 @@
 package com.sttiten.iptv.data.extension.security
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.sttiten.iptv.data.database.model.ProviderAccount
-import com.sttiten.iptv.extension.api.ExtensionId
-import com.sttiten.iptv.extension.transport.android.InstalledExtensionService
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking

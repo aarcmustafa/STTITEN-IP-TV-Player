@@ -20,13 +20,6 @@ import androidx.work.OutOfQuotaPolicy
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import com.sttiten.iptv.data.R
-import com.sttiten.iptv.data.database.model.DataSource
-import com.sttiten.iptv.data.parser.xtream.XtreamInput
-import com.sttiten.iptv.data.repository.playlist.PlaylistDataMaintenanceCoordinator
-import com.sttiten.iptv.data.repository.playlist.PlaylistRepository
-import com.sttiten.iptv.data.repository.programme.ProgrammeRepository
-import com.sttiten.iptv.i18n.R.string
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.CancellationException

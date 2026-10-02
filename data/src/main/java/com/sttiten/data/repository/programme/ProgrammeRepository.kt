@@ -1,8 +1,6 @@
 package com.sttiten.iptv.data.repository.programme
 
 import androidx.paging.PagingData
-import com.sttiten.iptv.data.database.model.Programme
-import com.sttiten.iptv.data.database.model.ProgrammeRange
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 

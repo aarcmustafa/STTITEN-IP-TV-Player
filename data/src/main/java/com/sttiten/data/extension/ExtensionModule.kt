@@ -1,39 +1,6 @@
 package com.sttiten.iptv.data.extension
 
 import android.content.Context
-import com.sttiten.iptv.data.extension.emby.EmbyCompatibleClient
-import com.sttiten.iptv.data.extension.emby.EmbyCompatibleProvider
-import com.sttiten.iptv.data.extension.emby.OkHttpEmbyCompatibleClient
-import com.sttiten.iptv.data.extension.security.AndroidKeystoreCredentialVault
-import com.sttiten.iptv.data.extension.security.CredentialVault
-import com.sttiten.iptv.data.extension.security.ExtensionSecretStore
-import com.sttiten.iptv.data.extension.security.ExtensionHookBrokerScopeProvider
-import com.sttiten.iptv.data.extension.security.HostNetworkBrokerImpl
-import com.sttiten.iptv.data.extension.security.ProviderHostNetworkBroker
-import com.sttiten.iptv.data.repository.extension.ExtensionContributionRepository
-import com.sttiten.iptv.data.repository.extension.ExtensionContributionRepositoryImpl
-import com.sttiten.iptv.data.repository.extension.ExtensionContributionScheduler
-import com.sttiten.iptv.data.repository.extension.ExtensionSettingStore
-import com.sttiten.iptv.data.repository.extension.ExtensionSettingsRepository
-import com.sttiten.iptv.data.repository.extension.ExtensionSettingsRepositoryImpl
-import com.sttiten.iptv.data.repository.extension.WorkManagerExtensionContributionScheduler
-import com.sttiten.iptv.data.repository.plugin.AndroidExtensionPluginDiscovery
-import com.sttiten.iptv.data.repository.plugin.AndroidExtensionPluginTransportConnector
-import com.sttiten.iptv.data.repository.plugin.ExtensionPluginDiscovery
-import com.sttiten.iptv.data.repository.plugin.ExtensionPluginRepository
-import com.sttiten.iptv.data.repository.plugin.ExtensionPluginRepositoryImpl
-import com.sttiten.iptv.data.repository.plugin.ExtensionPluginTransportConnector
-import com.sttiten.iptv.data.repository.provider.SubscriptionProviderRepository
-import com.sttiten.iptv.data.repository.provider.SubscriptionProviderRepositoryImpl
-import com.sttiten.iptv.extension.api.ExtensionApiVersions
-import com.sttiten.iptv.extension.runtime.CapabilityPolicy
-import com.sttiten.iptv.extension.runtime.ExtensionRegistrationResult
-import com.sttiten.iptv.extension.runtime.ExtensionBrokerScopeProvider
-import com.sttiten.iptv.extension.runtime.ExtensionRuntime
-import com.sttiten.iptv.extension.runtime.ExtensionSettingsProvider
-import com.sttiten.iptv.extension.runtime.InvocationPolicy
-// import com.sttiten.iptv.extension.transport.android.AndroidExtensionDiscovery
-// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

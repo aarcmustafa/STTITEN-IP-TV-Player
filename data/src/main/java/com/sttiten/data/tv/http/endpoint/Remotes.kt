@@ -1,7 +1,5 @@
 package com.sttiten.iptv.data.tv.http.endpoint
 
-import com.sttiten.iptv.data.service.DPadReactionService
-import com.sttiten.iptv.data.tv.model.RemoteDirection
 import io.ktor.server.response.respond
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.post

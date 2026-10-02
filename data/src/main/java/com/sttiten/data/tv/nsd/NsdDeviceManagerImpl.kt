@@ -3,8 +3,6 @@ package com.sttiten.iptv.data.tv.nsd
 import android.net.nsd.NsdManager
 import android.net.nsd.NsdServiceInfo
 import android.net.wifi.WifiManager
-import com.sttiten.iptv.data.tv.nsd.NsdDeviceManager.Companion.META_DATA_PIN
-import com.sttiten.iptv.data.tv.nsd.NsdDeviceManager.Companion.SERVICE_TYPE
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow

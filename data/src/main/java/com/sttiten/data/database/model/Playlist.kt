@@ -7,11 +7,6 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.Relation
-import com.sttiten.iptv.annotation.Exclude
-import com.sttiten.iptv.core.foundation.util.basic.startsWithAny
-import com.sttiten.iptv.data.parser.xtream.XtreamInput
-import com.sttiten.iptv.data.parser.xtream.XtreamParser
-import com.sttiten.iptv.i18n.R
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.descriptors.PrimitiveKind

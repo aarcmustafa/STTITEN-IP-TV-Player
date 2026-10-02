@@ -4,14 +4,6 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.sttiten.iptv.data.database.M3UDatabase
-import com.sttiten.iptv.data.database.model.Channel
-import com.sttiten.iptv.data.database.model.ChannelPlaybackReference
-import com.sttiten.iptv.data.database.model.DataSource
-import com.sttiten.iptv.data.database.model.Playlist
-import com.sttiten.iptv.data.database.model.ProviderAccount
-import com.sttiten.iptv.data.database.model.ProviderCredentialEntity
-import com.sttiten.iptv.data.database.model.ProviderPlaybackSessionEntity
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals

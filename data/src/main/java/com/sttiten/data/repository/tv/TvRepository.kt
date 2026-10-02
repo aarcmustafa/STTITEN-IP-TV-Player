@@ -1,6 +1,5 @@
 package com.sttiten.iptv.data.repository.tv
 
-import com.sttiten.iptv.data.tv.model.TvInfo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import kotlin.time.Duration

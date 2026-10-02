@@ -1,7 +1,5 @@
 package com.sttiten.iptv.data.extension.security
 
-import com.sttiten.iptv.data.database.dao.ProviderDao
-import com.sttiten.iptv.extension.api.security.CredentialHandle
 import javax.inject.Inject
 
 internal class CredentialResolver @Inject constructor(

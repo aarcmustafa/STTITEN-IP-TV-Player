@@ -6,9 +6,6 @@ import androidx.room.RenameTable
 import androidx.room.migration.AutoMigrationSpec
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.sttiten.iptv.data.extension.security.CredentialVault
-import com.sttiten.iptv.extension.api.ExtensionId
-import com.sttiten.iptv.extension.api.subscription.ProviderKind
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 
 internal object DatabaseMigrations {

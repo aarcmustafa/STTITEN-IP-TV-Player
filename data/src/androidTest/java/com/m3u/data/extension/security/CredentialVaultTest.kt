@@ -4,7 +4,6 @@ import android.content.Context
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import androidx.test.core.app.ApplicationProvider
-import com.sttiten.iptv.extension.api.security.CredentialHandle
 import java.security.KeyStore
 import java.util.UUID
 import java.util.concurrent.Callable

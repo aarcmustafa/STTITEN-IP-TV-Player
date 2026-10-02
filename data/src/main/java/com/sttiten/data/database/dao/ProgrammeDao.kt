@@ -5,8 +5,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.sttiten.iptv.data.database.model.Programme
-import com.sttiten.iptv.data.database.model.ProgrammeRange
 import kotlinx.coroutines.flow.Flow
 
 @Dao

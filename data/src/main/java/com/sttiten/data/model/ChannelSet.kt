@@ -1,7 +1,6 @@
 package com.sttiten.iptv.data.model
 
 import androidx.compose.runtime.Immutable
-import com.sttiten.iptv.core.foundation.wrapper.Sort
 
 @Immutable
 data class ChannelSet(

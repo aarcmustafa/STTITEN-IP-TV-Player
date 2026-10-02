@@ -4,11 +4,6 @@ import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
-import com.sttiten.iptv.data.database.model.ChannelPlaybackReference
-import com.sttiten.iptv.data.database.model.ProviderAccount
-import com.sttiten.iptv.data.database.model.ProviderAccountSummaryRow
-import com.sttiten.iptv.data.database.model.ProviderCredentialEntity
-import com.sttiten.iptv.data.database.model.ProviderPlaybackSessionEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

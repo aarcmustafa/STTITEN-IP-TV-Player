@@ -1,8 +1,6 @@
 package com.sttiten.iptv.data.extension.security
 
 import androidx.room.withTransaction
-import com.sttiten.iptv.data.database.M3UDatabase
-import com.sttiten.iptv.data.database.dao.ProviderDao
 import javax.inject.Inject
 import javax.inject.Singleton
 

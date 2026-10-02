@@ -4,8 +4,6 @@ import androidx.compose.runtime.Immutable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.sttiten.iptv.annotation.Exclude
-import com.sttiten.iptv.data.parser.xtream.XtreamEpisodeInfo
 import io.ktor.http.URLBuilder
 import io.ktor.http.Url
 import io.ktor.http.appendPathSegments

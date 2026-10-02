@@ -2,16 +2,6 @@
 
 package com.sttiten.iptv.data.repository
 
-import com.sttiten.iptv.data.repository.channel.ChannelRepository
-import com.sttiten.iptv.data.repository.channel.ChannelRepositoryImpl
-import com.sttiten.iptv.data.repository.media.MediaRepository
-import com.sttiten.iptv.data.repository.media.MediaRepositoryImpl
-import com.sttiten.iptv.data.repository.playlist.PlaylistRepository
-import com.sttiten.iptv.data.repository.playlist.PlaylistRepositoryImpl
-import com.sttiten.iptv.data.repository.programme.ProgrammeRepository
-import com.sttiten.iptv.data.repository.programme.ProgrammeRepositoryImpl
-import com.sttiten.iptv.data.repository.tv.TvRepository
-import com.sttiten.iptv.data.repository.tv.TvRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

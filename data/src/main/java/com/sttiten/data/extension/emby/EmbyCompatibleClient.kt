@@ -1,14 +1,6 @@
 package com.sttiten.iptv.data.extension.emby
 
 import android.content.Context
-import com.sttiten.iptv.core.foundation.architecture.Publisher
-import com.sttiten.iptv.data.api.ProviderOkhttpClient
-import com.sttiten.iptv.extension.api.subscription.EmbyCompatibleProviderKinds
-import com.sttiten.iptv.extension.api.subscription.PlaybackPreferences
-import com.sttiten.iptv.extension.api.subscription.PlaybackReference
-import com.sttiten.iptv.extension.api.subscription.ProviderKind
-import com.sttiten.iptv.extension.api.subscription.SubscriptionChannelDescriptor
-import com.sttiten.iptv.extension.api.subscription.ValidatedProviderAccount
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.concurrent.Semaphore as JavaSemaphore
 import java.util.concurrent.atomic.AtomicBoolean

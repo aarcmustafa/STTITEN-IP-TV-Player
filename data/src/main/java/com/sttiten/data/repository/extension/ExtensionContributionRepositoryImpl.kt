@@ -1,24 +1,5 @@
 package com.sttiten.iptv.data.repository.extension
 
-import com.sttiten.iptv.data.database.dao.ChannelDao
-import com.sttiten.iptv.data.database.dao.ProviderDao
-import com.sttiten.iptv.data.database.model.ProviderAccount
-import com.sttiten.iptv.data.extension.isSafeExtensionText
-import com.sttiten.iptv.extension.api.ChannelMetadataPatch
-import com.sttiten.iptv.extension.api.ChannelMetadataSnapshot
-import com.sttiten.iptv.extension.api.ExtensionState
-import com.sttiten.iptv.extension.api.ExtensionProgramme
-import com.sttiten.iptv.extension.api.EpgRefreshRequest
-import com.sttiten.iptv.extension.api.HookResult
-import com.sttiten.iptv.extension.api.HostHookSpecs
-import com.sttiten.iptv.extension.api.MetadataEnrichmentRequest
-import com.sttiten.iptv.extension.api.SearchProviderRequest
-import com.sttiten.iptv.extension.api.ExtensionId
-import com.sttiten.iptv.extension.api.security.CredentialHandle
-import com.sttiten.iptv.extension.api.subscription.ProviderAccountReference
-import com.sttiten.iptv.extension.api.subscription.ProviderCredential
-import com.sttiten.iptv.extension.api.subscription.ProviderKind
-import com.sttiten.iptv.extension.runtime.ExtensionRuntime
 import javax.inject.Inject
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async

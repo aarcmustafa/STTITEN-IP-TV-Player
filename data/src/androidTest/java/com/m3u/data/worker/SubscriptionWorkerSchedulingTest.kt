@@ -8,8 +8,6 @@ import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import androidx.work.impl.WorkManagerImpl
 import androidx.work.impl.model.WorkSpec
-import com.sttiten.iptv.data.database.model.DataSource
-import com.sttiten.iptv.data.parser.xtream.XtreamInput
 import java.util.UUID
 import java.util.concurrent.TimeUnit
 import org.junit.After

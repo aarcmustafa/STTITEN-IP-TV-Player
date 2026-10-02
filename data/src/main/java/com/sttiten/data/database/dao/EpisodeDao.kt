@@ -3,7 +3,6 @@ package com.sttiten.iptv.data.database.dao
 import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Query
-import com.sttiten.iptv.data.database.model.Episode
 import kotlinx.coroutines.flow.Flow
 
 @Dao

@@ -4,12 +4,6 @@ import android.content.Context
 import android.content.res.Configuration
 import android.net.nsd.NsdServiceInfo
 import android.provider.Settings
-import com.sttiten.iptv.data.BuildConfig
-import com.sttiten.iptv.data.api.TvApiDelegate
-import com.sttiten.iptv.data.tv.Utils
-import com.sttiten.iptv.data.tv.http.HttpServer
-import com.sttiten.iptv.data.tv.model.TvInfo
-import com.sttiten.iptv.data.tv.nsd.NsdDeviceManager
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
