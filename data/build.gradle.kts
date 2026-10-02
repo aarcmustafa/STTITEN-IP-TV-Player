@@ -106,7 +106,6 @@ android {
 dependencies {
     implementation(project(":core:foundation"))
     implementation(project(":extension:runtime"))
-    ksp(project(":lint:processor"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
