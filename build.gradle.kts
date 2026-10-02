@@ -145,7 +145,6 @@ subprojects {
     plugins.withId("com.android.application") {
         configureBuiltInAndroidKotlin()
         val publishedApkPrefix = when (path) {
-            ":app:smartphone" -> ""
             ":app:tv" -> "tv-"
             else -> null
         }
