@@ -32,8 +32,8 @@ import com.sttiten.iptv.extension.runtime.ExtensionBrokerScopeProvider
 import com.sttiten.iptv.extension.runtime.ExtensionRuntime
 import com.sttiten.iptv.extension.runtime.ExtensionSettingsProvider
 import com.sttiten.iptv.extension.runtime.InvocationPolicy
-import com.sttiten.iptv.extension.transport.android.AndroidExtensionDiscovery
-import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
+// import com.sttiten.iptv.extension.transport.android.AndroidExtensionDiscovery
+// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -129,15 +129,15 @@ internal abstract class ExtensionBindingsModule {
 internal object ExtensionRuntimeModule {
     @Provides
     @Singleton
-    fun provideAndroidExtensionDiscovery(
+//     fun provideAndroidExtensionDiscovery(
         @ApplicationContext context: Context,
-    ) = AndroidExtensionDiscovery(context)
+//     ) = AndroidExtensionDiscovery(context)
 
     @Provides
     @Singleton
-    fun provideExtensionTrustStore(
+//     fun provideExtensionTrustStore(
         @ApplicationContext context: Context,
-    ) = ExtensionTrustStore(context)
+//     ) = ExtensionTrustStore(context)
 
     @Provides
     @Singleton
@@ -147,7 +147,7 @@ internal object ExtensionRuntimeModule {
     @Singleton
     fun provideExtensionRuntime(
         provider: EmbyCompatibleProvider,
-        trustStore: ExtensionTrustStore,
+//         trustStore: ExtensionTrustStore,
         settingsProvider: ExtensionSettingsProvider,
         brokerScopeProvider: ExtensionBrokerScopeProvider,
         invocationPolicy: InvocationPolicy,

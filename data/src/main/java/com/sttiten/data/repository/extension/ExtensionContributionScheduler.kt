@@ -17,7 +17,7 @@ import com.sttiten.iptv.extension.api.ExtensionState
 import com.sttiten.iptv.extension.api.HostHookSpecs
 import com.sttiten.iptv.extension.runtime.ExtensionExecutionKind
 import com.sttiten.iptv.extension.runtime.ExtensionRuntime
-import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
+// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import java.security.MessageDigest
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
@@ -37,7 +37,7 @@ internal class WorkManagerExtensionContributionScheduler internal constructor(
     constructor(
         workManager: WorkManager,
         runtime: ExtensionRuntime,
-        trustStore: ExtensionTrustStore,
+//         trustStore: ExtensionTrustStore,
     ) : this(
         operations = WorkManagerExtensionContributionWorkOperations(workManager),
         hasEnabledContributor = {
@@ -102,7 +102,7 @@ internal class WorkManagerExtensionContributionScheduler internal constructor(
 }
 
 private fun ExtensionRuntime.hasEnabledContributionExtension(
-    trustStore: ExtensionTrustStore,
+//     trustStore: ExtensionTrustStore,
 ): Boolean = listOf(
     HostHookSpecs.MetadataEnrichment.hook,
     HostHookSpecs.EpgRefresh.hook,

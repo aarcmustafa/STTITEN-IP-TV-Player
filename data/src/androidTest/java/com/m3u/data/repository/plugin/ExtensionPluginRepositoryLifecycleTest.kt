@@ -68,7 +68,7 @@ import com.sttiten.iptv.extension.runtime.ExtensionRegistrationLease
 import com.sttiten.iptv.extension.runtime.ExtensionRuntime
 import com.sttiten.iptv.extension.runtime.ExtensionTransportHealth
 import com.sttiten.iptv.extension.transport.android.ExtensionTransportIncompatibleException
-import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
+// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import com.sttiten.iptv.extension.transport.android.InstalledExtensionService
 import java.util.concurrent.atomic.AtomicInteger
 import kotlinx.coroutines.CancellationException
@@ -98,7 +98,7 @@ import org.junit.runner.RunWith
 class ExtensionPluginRepositoryLifecycleTest {
     private lateinit var context: Context
     private lateinit var database: M3UDatabase
-    private lateinit var trustStore: ExtensionTrustStore
+//     private lateinit var trustStore: ExtensionTrustStore
     private lateinit var settingStore: ExtensionSettingStore
     private val repositories = mutableListOf<ExtensionPluginRepositoryImpl>()
 
@@ -113,7 +113,7 @@ class ExtensionPluginRepositoryLifecycleTest {
         database = Room.inMemoryDatabaseBuilder(context, M3UDatabase::class.java)
             .allowMainThreadQueries()
             .build()
-        trustStore = ExtensionTrustStore(context)
+//         trustStore = ExtensionTrustStore(context)
         settingStore = ExtensionSettingStore(context, NoOpSecretStore)
     }
 

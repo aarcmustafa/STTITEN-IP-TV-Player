@@ -41,7 +41,7 @@ import com.sttiten.iptv.extension.runtime.ExtensionBrokerScopeRequest
 import com.sttiten.iptv.extension.runtime.ExtensionRegistrationLease
 import com.sttiten.iptv.extension.runtime.ExtensionRegistrationResult
 import com.sttiten.iptv.extension.runtime.ExtensionRuntime
-import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
+// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import com.sttiten.iptv.extension.transport.android.InstalledExtensionService
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.JsonPrimitive
@@ -64,7 +64,7 @@ class ExtensionHookBrokerScopeProviderTest {
     private lateinit var provider: ExtensionHookBrokerScopeProvider
     private lateinit var settingStore: ExtensionSettingStore
     private lateinit var extensionSecretStore: RecordingExtensionSecretStore
-    private lateinit var trustStore: ExtensionTrustStore
+//     private lateinit var trustStore: ExtensionTrustStore
     private lateinit var registrationLease: ExtensionRegistrationLease
 
     @Before
@@ -116,7 +116,7 @@ class ExtensionHookBrokerScopeProviderTest {
         registrationLease = requireNotNull(
             runtime.captureRegistration(NETWORK_EXTENSION_ID)
         ).lease
-        trustStore = ExtensionTrustStore(context)
+//         trustStore = ExtensionTrustStore(context)
         provider = ExtensionHookBrokerScopeProvider(
             principalRegistry = principalRegistry,
             providerDao = database.providerDao(),

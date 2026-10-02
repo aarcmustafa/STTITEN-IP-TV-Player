@@ -16,7 +16,7 @@ import com.sttiten.iptv.extension.api.subscription.ProviderCredential
 import com.sttiten.iptv.extension.runtime.ExtensionBrokerScopeLease
 import com.sttiten.iptv.extension.runtime.ExtensionBrokerScopeProvider
 import com.sttiten.iptv.extension.runtime.ExtensionBrokerScopeRequest
-import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
+// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import java.util.concurrent.atomic.AtomicBoolean
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -27,7 +27,7 @@ internal class ExtensionHookBrokerScopeProvider @Inject constructor(
     private val providerDao: ProviderDao,
     private val scopeStore: ProviderBrokerScopeStore,
     private val settingStore: ExtensionSettingStore,
-    private val trustStore: ExtensionTrustStore,
+//     private val trustStore: ExtensionTrustStore,
 ) : ExtensionBrokerScopeProvider {
     override suspend fun open(
         request: ExtensionBrokerScopeRequest,

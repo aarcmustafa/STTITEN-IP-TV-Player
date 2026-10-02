@@ -16,8 +16,8 @@ import com.sttiten.iptv.extension.api.SerializedExtensionResult
 import com.sttiten.iptv.extension.runtime.ExtensionTransport
 import com.sttiten.iptv.extension.runtime.ExtensionTransportHealth
 import com.sttiten.iptv.extension.transport.android.AndroidBoundExtensionTransport
-import com.sttiten.iptv.extension.transport.android.AndroidExtensionDiscovery
-import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
+// import com.sttiten.iptv.extension.transport.android.AndroidExtensionDiscovery
+// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import com.sttiten.iptv.extension.transport.android.InstalledExtensionService
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -28,7 +28,7 @@ internal fun interface ExtensionPluginDiscovery {
 }
 
 internal class AndroidExtensionPluginDiscovery @Inject constructor(
-    private val discovery: AndroidExtensionDiscovery,
+//     private val discovery: AndroidExtensionDiscovery,
 ) : ExtensionPluginDiscovery {
     override fun discover(): List<InstalledExtensionService> = discovery.discover()
 }
@@ -106,7 +106,7 @@ private class AndroidExtensionPluginTransport(
 @Singleton
 internal class ExtensionInvocationGate @Inject constructor(
     private val settings: Settings,
-    private val trustStore: ExtensionTrustStore,
+//     private val trustStore: ExtensionTrustStore,
     private val principalRegistry: ActiveExtensionPrincipalRegistry,
 ) {
     suspend fun requireAuthorized(

@@ -22,8 +22,8 @@ import com.sttiten.iptv.extension.api.SerializedExtensionEnvelope
 import com.sttiten.iptv.extension.api.security.BrokerScopeHandle
 import com.sttiten.iptv.extension.api.security.BrokeredHttpRequest
 import com.sttiten.iptv.extension.api.security.BrokeredHttpResponse
-import com.sttiten.iptv.extension.transport.android.AndroidExtensionDiscovery
-import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
+// import com.sttiten.iptv.extension.transport.android.AndroidExtensionDiscovery
+// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -46,12 +46,12 @@ class ExtensionInvocationGateBinderTest {
         context.settings.edit { preferences ->
             preferences[PreferencesKeys.EXTERNAL_EXTENSIONS] = true
         }
-        val service = AndroidExtensionDiscovery(context).discover().single { candidate ->
+//         val service = AndroidExtensionDiscovery(context).discover().single { candidate ->
             candidate.packageName == REFERENCE_EXTENSION_PACKAGE &&
                 candidate.serviceName == REFERENCE_EXTENSION_SERVICE
         }
         assertNull(service.incompatibilityReason)
-        val trustStore = ExtensionTrustStore(context)
+//         val trustStore = ExtensionTrustStore(context)
         val principalRegistry = ActiveExtensionPrincipalRegistry()
         val connector = AndroidExtensionPluginTransportConnector(
             context = context,

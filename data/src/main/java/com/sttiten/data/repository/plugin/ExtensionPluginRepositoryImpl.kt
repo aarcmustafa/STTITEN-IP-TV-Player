@@ -38,7 +38,7 @@ import com.sttiten.iptv.extension.runtime.ExtensionTransportHealth
 import com.sttiten.iptv.extension.runtime.RegisteredExtension
 import com.sttiten.iptv.extension.runtime.reconcileCapabilitiesForRestore
 import com.sttiten.iptv.extension.transport.android.ExtensionTransportIncompatibleException
-import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
+// import com.sttiten.iptv.extension.transport.android.ExtensionTrustStore
 import com.sttiten.iptv.extension.transport.android.InstalledExtensionService
 import com.sttiten.iptv.extension.transport.android.TrustedExtensionService
 import javax.inject.Inject
@@ -65,7 +65,7 @@ import kotlinx.serialization.json.Json
 
 internal class ExtensionPluginRepositoryImpl private constructor(
     private val discovery: ExtensionPluginDiscovery,
-    private val trustStore: ExtensionTrustStore,
+//     private val trustStore: ExtensionTrustStore,
     private val transportConnector: ExtensionPluginTransportConnector,
     private val runtime: ExtensionRuntime,
     private val extensionSettingsRepository: ExtensionSettingsRepository,
@@ -103,7 +103,7 @@ internal class ExtensionPluginRepositoryImpl private constructor(
     @Inject
     constructor(
         discovery: ExtensionPluginDiscovery,
-        trustStore: ExtensionTrustStore,
+//         trustStore: ExtensionTrustStore,
         transportConnector: ExtensionPluginTransportConnector,
         runtime: ExtensionRuntime,
         extensionSettingsRepository: ExtensionSettingsRepository,
@@ -1758,7 +1758,7 @@ internal class ExtensionPluginRepositoryImpl private constructor(
     companion object {
         internal fun createForTest(
             discovery: ExtensionPluginDiscovery,
-            trustStore: ExtensionTrustStore,
+//             trustStore: ExtensionTrustStore,
             transportConnector: ExtensionPluginTransportConnector,
             runtime: ExtensionRuntime,
             extensionSettingsRepository: ExtensionSettingsRepository,
