@@ -100,7 +100,6 @@ val kotlinMetadataVersion = extensions
 
 subprojects {
     val coroutineOptInProjects = setOf(
-        ":app:smartphone",
         ":business:channel",
         ":business:favorite",
         ":business:foryou",
