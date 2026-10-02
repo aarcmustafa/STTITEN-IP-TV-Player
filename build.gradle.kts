@@ -91,6 +91,7 @@ plugins {
     alias(libs.plugins.androidx.baselineprofile) apply false
     alias(libs.plugins.com.squareup.wire) apply false
 }
+
 val kotlinMetadataVersion = extensions
     .getByType<VersionCatalogsExtension>()
     .named("libs")
@@ -148,7 +149,6 @@ subprojects {
             else -> null
         }
         if (publishedApkPrefix != null) {
-            val publishedApkIncludesAbi = path == ":app:smartphone"
             val androidComponents =
                 extensions.getByType<ApplicationAndroidComponentsExtension>()
             androidComponents.onVariants(
@@ -165,7 +165,7 @@ subprojects {
                     )
                     builtArtifactsLoader.set(variant.artifacts.getBuiltArtifactsLoader())
                     fileNamePrefix.set(publishedApkPrefix)
-                    includeAbiSuffix.set(publishedApkIncludesAbi)
+                    includeAbiSuffix.set(false)
                 }
                 variant.artifacts
                     .use(copyTask)
