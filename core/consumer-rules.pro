@@ -1,0 +1,2 @@
+-dontwarn com.sttiten.iptv.core.architecture.Abi$$serializer
+-dontwarn com.sttiten.iptv.core.architecture.Abi
