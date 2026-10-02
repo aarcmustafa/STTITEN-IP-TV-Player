@@ -10,7 +10,6 @@ kotlin {
 }
 
 dependencies {
-    implementation(project(":lint:annotation"))
 
     implementation(libs.symbol.processing.api)
     implementation(libs.kotlinpoet)
