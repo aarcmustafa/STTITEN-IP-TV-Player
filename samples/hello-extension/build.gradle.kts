@@ -21,5 +21,4 @@ android {
 }
 
 dependencies {
-    implementation(project(":extension:sdk-android"))
 }
