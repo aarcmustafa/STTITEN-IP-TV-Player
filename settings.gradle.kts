@@ -7,7 +7,9 @@ pluginManagement {
         maven("https://plugins.gradle.org/m2/")
     }
 }
+
 includeBuild("parser")
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -17,17 +19,17 @@ dependencyResolutionManagement {
         maven("https://plugins.gradle.org/m2/")
     }
 }
+
 rootProject.name = "M3U"
-include(
-    ":app:smartphone",
-    ":app:tv"
-)
+
+include(":app:tv")
+
 include(":core", ":core:foundation")
 include(
     ":extension:api",
     ":extension:runtime",
     ":extension:transport-android",
-    ":extension:sdk-android",
+    ":extension:sdk-android"
 )
 include(":data")
 include(
@@ -36,12 +38,9 @@ include(
     ":business:setting",
     ":business:playlist",
     ":business:playlist-configuration",
-    ":business:channel",
+    ":business:channel"
 )
-include(
-    ":baselineprofile:smartphone",
-    ":baselineprofile:tv"
-)
+include(":baselineprofile:tv")
 include(":i18n")
 include(":testing:device-benchmark")
 include(":testing:mock-server")
