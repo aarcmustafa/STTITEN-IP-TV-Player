@@ -10,4 +10,5 @@
     <string name="hello_settings_device_name">Device name</string>
     <string name="hello_settings_device_description">A name for this device</string>
     <string name="hello_settings_device_default">My device</string>
+    <string name="developer_name">Djellouli Mustafa</string>
 </resources>
