@@ -180,6 +180,4 @@ tasks.matching { task ->
 }
 
 tasks.matching { task -> task.name == "connectedDebugAndroidTest" }.configureEach {
-    dependsOn(":testing:extension-reference:installDebug")
-    finalizedBy(":testing:extension-reference:uninstallDebug")
 }
