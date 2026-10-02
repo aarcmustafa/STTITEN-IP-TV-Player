@@ -8,7 +8,6 @@ plugins {
     alias(libs.plugins.com.google.devtools.ksp)
     alias(libs.plugins.org.jetbrains.kotlin.serialization)
     alias(libs.plugins.compose.compiler)
-    id("dev.oxyroid.native-load")
 }
 
 fun ByteArray.sha256Hex(): String {
