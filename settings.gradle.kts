@@ -1,5 +1,4 @@
 pluginManagement {
-    includeBuild("native-load-gradle-plugin")
     repositories {
         gradlePluginPortal()
         google()
@@ -7,8 +6,6 @@ pluginManagement {
         maven("https://plugins.gradle.org/m2/")
     }
 }
-
-includeBuild("parser")
 
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
