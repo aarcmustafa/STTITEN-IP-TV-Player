@@ -8,7 +8,6 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.Relation
 import com.sttiten.iptv.annotation.Exclude
-import com.sttiten.iptv.annotation.Likable
 import com.sttiten.iptv.core.foundation.util.basic.startsWithAny
 import com.sttiten.iptv.data.parser.xtream.XtreamInput
 import com.sttiten.iptv.data.parser.xtream.XtreamParser
@@ -24,7 +23,6 @@ import kotlinx.serialization.encoding.Encoder
 @Entity(tableName = "playlists")
 @Immutable
 @Serializable
-@Likable
 data class Playlist(
     @ColumnInfo(name = "title")
     val title: String,

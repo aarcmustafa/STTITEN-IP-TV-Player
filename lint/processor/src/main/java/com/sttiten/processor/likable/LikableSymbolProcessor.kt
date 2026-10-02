@@ -1,4 +1,3 @@
-package com.sttiten.iptv.processor.likable
 
 import com.google.devtools.ksp.KspExperimental
 import com.google.devtools.ksp.getDeclaredProperties
@@ -13,7 +12,6 @@ import com.google.devtools.ksp.symbol.KSVisitorVoid
 import com.google.devtools.ksp.symbol.Modifier
 import com.google.devtools.ksp.validate
 import com.sttiten.iptv.annotation.Exclude
-import com.sttiten.iptv.annotation.Likable
 import com.squareup.kotlinpoet.ClassName
 import com.squareup.kotlinpoet.CodeBlock
 import com.squareup.kotlinpoet.FileSpec
@@ -25,13 +23,10 @@ import com.squareup.kotlinpoet.ksp.toTypeName
 import com.squareup.kotlinpoet.ksp.writeTo
 import com.squareup.kotlinpoet.withIndent
 
-class LikableSymbolProcessor(
     private val logger: KSPLogger,
     private val codeGenerator: CodeGenerator
 ) : SymbolProcessor {
     override fun process(resolver: Resolver): List<KSAnnotated> {
-        val likableAnnotationName = requireNotNull(Likable::class.qualifiedName)
-        val symbols = resolver.getSymbolsWithAnnotation(likableAnnotationName)
 
         val unableToProcess = symbols.filterNot { it.validate() }
         symbols
