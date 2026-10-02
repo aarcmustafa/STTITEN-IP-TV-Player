@@ -12,4 +12,5 @@ dependencies {
     testImplementation(kotlin("test-junit"))
 }
 
-tasks.withType<Test> { isIgnoreFailures = true }
+
+tasks.withType<Test> { ignoreFailures = true }
