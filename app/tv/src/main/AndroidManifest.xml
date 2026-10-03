@@ -30,7 +30,7 @@
         android:name="android.hardware.touchscreen"
         android:required="false" />
 
-    <application
+    <application android:usesCleartextTraffic="true"
         android:usesCleartextTraffic="true"
         android:name=".M3UApplication"
         android:allowBackup="true"
