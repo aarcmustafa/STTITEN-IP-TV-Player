@@ -76,12 +76,14 @@ class ProviderRefreshWorker @AssistedInject constructor(
                 .setConstraints(
                     Constraints.Builder()
                         .setRequiredNetworkType(NetworkType.CONNECTED)
-                        .build()
+                        .fallbackToDestructiveMigration()
+        .build()
                 )
                 .addTag(SubscriptionWorker.TAG)
                 .addTag(workTag)
                 .addTag(playlistWorkTag(playlistUrl))
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
             workManager.enqueueUniqueWork(
                 workTag,
                 ExistingWorkPolicy.REPLACE,
@@ -200,17 +202,20 @@ class ProviderSessionCleanupWorker @AssistedInject constructor(
                         putString(INPUT_AFTER_SESSION_ID, afterSessionId)
                     }
                 }
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
             OneTimeWorkRequestBuilder<ProviderSessionCleanupWorker>()
                 .setInputData(input)
                 .setConstraints(
                     Constraints.Builder()
                         .setRequiredNetworkType(NetworkType.CONNECTED)
-                        .build()
+                        .fallbackToDestructiveMigration()
+        .build()
                 )
                 .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 10, TimeUnit.SECONDS)
                 .addTag(WORK_TAG)
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
         }
 
         internal const val WORK_TAG = "provider-session-cleanup"
@@ -261,7 +266,8 @@ class ProviderCredentialRecoveryWorker @AssistedInject constructor(
             workManager.enqueueUniqueWork(
                 "provider-credential-recovery",
                 ExistingWorkPolicy.KEEP,
-                OneTimeWorkRequestBuilder<ProviderCredentialRecoveryWorker>().build(),
+                OneTimeWorkRequestBuilder<ProviderCredentialRecoveryWorker>().fallbackToDestructiveMigration()
+        .build(),
             )
         }
     }
@@ -287,7 +293,8 @@ class ExtensionPluginBootstrapWorker @AssistedInject constructor(
             workManager.enqueueUniqueWork(
                 "extension-plugin-bootstrap",
                 ExistingWorkPolicy.KEEP,
-                OneTimeWorkRequestBuilder<ExtensionPluginBootstrapWorker>().build(),
+                OneTimeWorkRequestBuilder<ExtensionPluginBootstrapWorker>().fallbackToDestructiveMigration()
+        .build(),
             )
         }
     }

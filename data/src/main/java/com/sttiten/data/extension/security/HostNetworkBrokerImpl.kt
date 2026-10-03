@@ -62,6 +62,7 @@ internal class HostNetworkBrokerImpl @Inject constructor(
         .followRedirects(false)
         .followSslRedirects(false)
         .callTimeout(BROKER_REQUEST_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS)
+        .fallbackToDestructiveMigration()
         .build()
     private val requestPermits = Semaphore(MAX_CONCURRENT_BROKER_REQUESTS)
 
@@ -233,7 +234,8 @@ internal class HostNetworkBrokerImpl @Inject constructor(
                 builder.header(name, resolved)
             }
             builder.method(method, requestBody)
-            val call = brokerClient.newCall(builder.build())
+            val call = brokerClient.newCall(builder.fallbackToDestructiveMigration()
+        .build())
             call.awaitResponse().use { response ->
                 if (response.isRedirect) {
                     require(redirects++ < MAX_REDIRECTS) { "Too many extension redirects" }
@@ -385,7 +387,8 @@ internal class HostNetworkBrokerImpl @Inject constructor(
                 builder.header(name, resolved)
             }
             builder.method(method, requestBody)
-            brokerClient.newCall(builder.build()).awaitResponse().use { response ->
+            brokerClient.newCall(builder.fallbackToDestructiveMigration()
+        .build()).awaitResponse().use { response ->
                 if (response.isRedirect) {
                     require(redirects++ < MAX_REDIRECTS) {
                         "Too many extension redirects"

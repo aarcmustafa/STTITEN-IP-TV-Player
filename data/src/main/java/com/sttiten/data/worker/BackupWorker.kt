@@ -42,7 +42,8 @@ class BackupWorker @AssistedInject constructor(
         return Notification.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.round_file_download_24)
             .setContentTitle(context.getString(string.data_worker_backup_notification_title))
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
     }
 
     private fun createChannel() {

@@ -44,11 +44,13 @@ internal object ApiModule {
             .addInterceptor(
                 ChuckerInterceptor.Builder(context)
                     .maxContentLength(10240)
-                    .build()
+                    .fallbackToDestructiveMigration()
+        .build()
             )
             .sslSocketFactory(SSLs.TLSTrustAll.socketFactory, Certs.TrustAll)
             .hostnameVerifier { _, _ -> true }
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
     }
 
     @Provides
@@ -68,18 +70,21 @@ internal object ApiModule {
                         .code(999)
                         .message(e.message.orEmpty())
                         .body("{${e}}".toResponseBody())
-                        .build()
+                        .fallbackToDestructiveMigration()
+        .build()
                 }
             }
             .sslSocketFactory(SSLs.TLSTrustAll.socketFactory, Certs.TrustAll)
             .hostnameVerifier { _, _ -> true }
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
     }
 
     @Provides
     @Singleton
     @ProviderOkhttpClient
-    fun provideProviderOkhttpClient(): OkHttpClient = OkHttpClient.Builder().build()
+    fun provideProviderOkhttpClient(): OkHttpClient = OkHttpClient.Builder().fallbackToDestructiveMigration()
+        .build()
 
     @Provides
     @Singleton

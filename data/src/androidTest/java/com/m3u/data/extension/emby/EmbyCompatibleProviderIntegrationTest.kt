@@ -80,7 +80,8 @@ class EmbyCompatibleProviderIntegrationTest {
             .apply {
                 playback.headers.forEach { (name, value) -> header(name, value) }
             }
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         okHttpClient.newCall(request).execute().use { response ->
             assertTrue(response.isSuccessful)
             assertTrue(response.body.string().startsWith("#EXTM3U"))

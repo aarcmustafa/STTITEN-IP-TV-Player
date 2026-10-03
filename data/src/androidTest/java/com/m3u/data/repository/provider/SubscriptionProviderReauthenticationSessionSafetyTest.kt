@@ -117,7 +117,8 @@ class SubscriptionProviderReauthenticationSessionSafetyTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val database = Room.inMemoryDatabaseBuilder(context, M3UDatabase::class.java)
             .allowMainThreadQueries()
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         val credentialVault = TestCredentialVault()
         val extension = TestProviderExtension(
             providerDao = database.providerDao(),

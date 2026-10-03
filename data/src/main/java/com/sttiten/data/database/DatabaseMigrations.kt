@@ -204,7 +204,8 @@ internal object DatabaseMigrations {
                         .password("")
                         .query(null)
                         .fragment(null)
-                        .build()
+                        .fallbackToDestructiveMigration()
+        .build()
                         .toString()
                     db.execSQL(
                         "DELETE FROM provider_credentials WHERE account_id = ?",

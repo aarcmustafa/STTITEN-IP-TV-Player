@@ -27,7 +27,8 @@ class ExtensionContributionRepositoryImplTest {
         database = Room.inMemoryDatabaseBuilder(
             ApplicationProvider.getApplicationContext<Context>(),
             M3UDatabase::class.java,
-        ).allowMainThreadQueries().build()
+        ).allowMainThreadQueries().fallbackToDestructiveMigration()
+        .build()
     }
 
     @After

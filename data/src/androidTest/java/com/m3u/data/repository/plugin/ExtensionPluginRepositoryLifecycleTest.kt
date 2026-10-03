@@ -53,7 +53,8 @@ class ExtensionPluginRepositoryLifecycleTest {
         }
         database = Room.inMemoryDatabaseBuilder(context, M3UDatabase::class.java)
             .allowMainThreadQueries()
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
 //         trustStore = ExtensionTrustStore(context)
         settingStore = ExtensionSettingStore(context, NoOpSecretStore)
     }

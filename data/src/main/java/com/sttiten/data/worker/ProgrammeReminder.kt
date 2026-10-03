@@ -48,7 +48,8 @@ class ProgrammeReminder @AssistedInject constructor(
         }
         notificationManager.notify(
             notificationId,
-            builder.build()
+            builder.fallbackToDestructiveMigration()
+        .build()
         )
         return Result.success()
     }
@@ -67,7 +68,8 @@ class ProgrammeReminder @AssistedInject constructor(
             AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_MEDIA)
                 .setContentType(AudioAttributes.CONTENT_TYPE_MOVIE)
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
         )
         notificationManager.createNotificationChannel(channel)
     }
@@ -100,7 +102,8 @@ class ProgrammeReminder @AssistedInject constructor(
                 .addTag("id=$programmeId")
                 .setInputData(data)
                 .setInitialDelay(programmeStart - now, TimeUnit.MILLISECONDS)
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
             workManager.enqueue(request)
         }
     }

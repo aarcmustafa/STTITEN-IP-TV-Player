@@ -175,7 +175,8 @@ class CredentialVaultTest {
                     KeyProperties.PURPOSE_SIGN or KeyProperties.PURPOSE_VERIFY,
                 )
                     .setDigests(KeyProperties.DIGEST_SHA256)
-                    .build()
+                    .fallbackToDestructiveMigration()
+        .build()
             )
             generateKey()
         }

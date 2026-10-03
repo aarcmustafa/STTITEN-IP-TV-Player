@@ -38,7 +38,8 @@ internal fun OkHttpClient.withProviderPlaybackHeaders(
                     }
                     request = request.newBuilder()
                         .url(target)
-                        .build()
+                        .fallbackToDestructiveMigration()
+        .build()
                         .withProviderPlaybackHeaders(
                             approvedUrl = approvedUrl,
                             headers = providerHeaders,
@@ -59,6 +60,7 @@ internal fun OkHttpClient.withProviderPlaybackHeaders(
                 )
             )
         }
+        .fallbackToDestructiveMigration()
         .build()
 }
 
@@ -77,12 +79,14 @@ internal fun Request.withProviderPlaybackHeaders(
                 sanitized.removeHeader(name)
             }
         }
-        return sanitized.build()
+        return sanitized.fallbackToDestructiveMigration()
+        .build()
     }
     return newBuilder()
         .apply {
             headers.forEach { (name, value) -> header(name, value) }
         }
+        .fallbackToDestructiveMigration()
         .build()
 }
 

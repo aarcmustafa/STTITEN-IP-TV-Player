@@ -212,6 +212,7 @@ internal class OkHttpEmbyCompatibleClient private constructor(
             },
             TimeUnit.MILLISECONDS,
         )
+        .fallbackToDestructiveMigration()
         .build()
 
     override suspend fun validate(
@@ -222,7 +223,8 @@ internal class OkHttpEmbyCompatibleClient private constructor(
     ): EmbyValidation = withContext(Dispatchers.IO) {
         val normalizedBaseUrl = normalizeBaseUrl(baseUrl)
         val publicInfo: SystemInfoResponse = executeJson(
-            requestBuilder(normalizedBaseUrl, "System/Info/Public").get().build()
+            requestBuilder(normalizedBaseUrl, "System/Info/Public").get().fallbackToDestructiveMigration()
+        .build()
         )
         val detectedKind = detectProviderKind(publicInfo.productName, publicInfo.serverName)
         val effectiveKind = when {
@@ -243,7 +245,8 @@ internal class OkHttpEmbyCompatibleClient private constructor(
                 providerKind = effectiveKind,
             )
                 .post(authenticationBody.toRequestBody(JSON_MEDIA_TYPE))
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
         )
         val accessToken = authentication.accessToken?.takeIf(String::isNotBlank)
             ?: throw EmbyProtocolException("Authentication response did not contain an access token")
@@ -298,10 +301,12 @@ internal class OkHttpEmbyCompatibleClient private constructor(
                         .addQueryParameter("StartIndex", startIndex.toString())
                         .addQueryParameter("Limit", pageLimit.toString())
                         .addQueryParameter("EnableImages", "true")
-                        .build()
+                        .fallbackToDestructiveMigration()
+        .build()
                 )
                 .get()
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
             requestCount++
             val response: LiveTvChannelsResponse = executeJson(request)
             val pageItems = response.items.orEmpty()
@@ -426,7 +431,8 @@ internal class OkHttpEmbyCompatibleClient private constructor(
                             addQueryParameter("MaxStreamingBitrate", bitrate.toString())
                         }
                     }
-                    .build()
+                    .fallbackToDestructiveMigration()
+        .build()
                 val response: PlaybackInfoResponse = executeJson(
                     requestBuilder(
                         baseUrl = account.normalizedBaseUrl,
@@ -437,7 +443,8 @@ internal class OkHttpEmbyCompatibleClient private constructor(
                     )
                         .url(playbackInfoUrl)
                         .get()
-                        .build()
+                        .fallbackToDestructiveMigration()
+        .build()
                 )
                 acquiredSession = response.playSessionId
                     ?.takeIf(String::isNotBlank)
@@ -550,7 +557,8 @@ internal class OkHttpEmbyCompatibleClient private constructor(
                         userId = account.userId,
                     )
                         .post(stoppedBody.toRequestBody(JSON_MEDIA_TYPE))
-                        .build(),
+                        .fallbackToDestructiveMigration()
+        .build(),
                     allowNotFound = true,
                 )
             }
@@ -559,7 +567,8 @@ internal class OkHttpEmbyCompatibleClient private constructor(
                     val closeUrl = url(account.normalizedBaseUrl, "LiveStreams/Close")
                         .newBuilder()
                         .addQueryParameter("LiveStreamId", liveStreamId)
-                        .build()
+                        .fallbackToDestructiveMigration()
+        .build()
                     executeNoContent(
                         requestBuilder(
                             baseUrl = account.normalizedBaseUrl,
@@ -570,7 +579,8 @@ internal class OkHttpEmbyCompatibleClient private constructor(
                         )
                             .url(closeUrl)
                             .post(ByteArray(0).toRequestBody(null))
-                            .build(),
+                            .fallbackToDestructiveMigration()
+        .build(),
                         allowNotFound = true,
                     )
                 }
@@ -716,6 +726,7 @@ internal class OkHttpEmbyCompatibleClient private constructor(
         .toHttpUrl()
         .newBuilder()
         .addPathSegments(path.trimStart('/'))
+        .fallbackToDestructiveMigration()
         .build()
 
     private fun absoluteUrl(baseUrl: String, candidate: String): String {
@@ -851,7 +862,8 @@ private object SameOriginRedirectInterceptor : Interceptor {
                     removeHeader("Transfer-Encoding")
                 }
             }
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
     }
 
     private const val MAX_REDIRECTS = 5

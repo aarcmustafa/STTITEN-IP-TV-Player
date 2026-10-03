@@ -51,7 +51,8 @@ class PersistedUriPermissionCleanupWorkerTest {
         val request = OneTimeWorkRequestBuilder<DelayedPermissionOwnerWorker>()
             .setInitialDelay(1, TimeUnit.DAYS)
             .addTag(permissionTag)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
 
         grantPersistableReadPermission(uri)
         try {
@@ -82,7 +83,8 @@ class PersistedUriPermissionCleanupWorkerTest {
         val permissionTag = beginPersistedUriPermissionLease(context, uri)
         val request = OneTimeWorkRequestBuilder<CompletingPermissionOwnerWorker>()
             .addTag(permissionTag)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
 
         grantPersistableReadPermission(uri)
         try {

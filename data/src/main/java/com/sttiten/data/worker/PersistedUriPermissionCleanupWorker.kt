@@ -92,7 +92,8 @@ class PersistedUriPermissionCleanupWorker @AssistedInject constructor(
                         MINIMUM_BACKOFF_SECONDS,
                         TimeUnit.SECONDS,
                     )
-                    .build()
+                    .fallbackToDestructiveMigration()
+        .build()
             workManager.enqueueUniqueWork(
                 "$UNIQUE_WORK_PREFIX$permissionTag",
                 ExistingWorkPolicy.REPLACE,
@@ -108,7 +109,8 @@ class PersistedUriPermissionCleanupWorker @AssistedInject constructor(
                         MINIMUM_BACKOFF_SECONDS,
                         TimeUnit.SECONDS,
                     )
-                    .build()
+                    .fallbackToDestructiveMigration()
+        .build()
             workManager.enqueueUniqueWork(
                 RECOVERY_WORK_NAME,
                 ExistingWorkPolicy.REPLACE,

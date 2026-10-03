@@ -855,7 +855,8 @@ class PlaylistRepositoryProviderRestoreTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val database = Room.inMemoryDatabaseBuilder(context, M3UDatabase::class.java)
             .allowMainThreadQueries()
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         val client = OkHttpClient()
         val repository = PlaylistRepositoryImpl(
             playlistDao = database.playlistDao(),

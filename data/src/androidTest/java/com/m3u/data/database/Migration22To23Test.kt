@@ -48,7 +48,8 @@ class Migration22To23Test {
             .addMigrations(DatabaseMigrations.migration22To23(TestCredentialVault))
             .addMigrations(DatabaseMigrations.MIGRATION_24_25)
             .addMigrations(DatabaseMigrations.MIGRATION_25_26)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         val migrated = database.openHelper.writableDatabase
 
         assertTrue(migrated.hasTable("provider_playback_sessions"))
@@ -108,7 +109,8 @@ class Migration22To23Test {
             .addMigrations(DatabaseMigrations.migration22To23(FailingCredentialVault))
             .addMigrations(DatabaseMigrations.MIGRATION_24_25)
             .addMigrations(DatabaseMigrations.MIGRATION_25_26)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         val migrated = database.openHelper.writableDatabase
 
         migrated.query(

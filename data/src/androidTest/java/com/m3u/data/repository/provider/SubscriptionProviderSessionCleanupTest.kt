@@ -1104,7 +1104,8 @@ class SubscriptionProviderSessionCleanupTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val database = Room.inMemoryDatabaseBuilder(context, M3UDatabase::class.java)
             .allowMainThreadQueries()
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         val credentialVault = TestCredentialVault()
         val extension = TestProviderExtension(
             defaultCloseResult = closeResult,

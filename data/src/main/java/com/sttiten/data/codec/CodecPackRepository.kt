@@ -132,7 +132,8 @@ class CodecPackRepository @Inject constructor(
     }
 
     private fun fetchManifest(url: String): CodecPackManifest {
-        val request = Request.Builder().url(url).build()
+        val request = Request.Builder().url(url).fallbackToDestructiveMigration()
+        .build()
         okHttpClient.newCall(request).execute().use { response ->
             require(response.isSuccessful) { "Failed to fetch codec manifest: ${response.code}" }
             val body = requireNotNull(response.body) { "Codec manifest response body is empty." }
@@ -155,7 +156,8 @@ class CodecPackRepository @Inject constructor(
     }
 
     private fun download(url: String, output: File, expectedSize: Long) {
-        val request = Request.Builder().url(url).build()
+        val request = Request.Builder().url(url).fallbackToDestructiveMigration()
+        .build()
         okHttpClient.newCall(request).execute().use { response ->
             require(response.isSuccessful) { "Failed to download codec pack: ${response.code}" }
             val body = requireNotNull(response.body) { "Codec pack response body is empty." }

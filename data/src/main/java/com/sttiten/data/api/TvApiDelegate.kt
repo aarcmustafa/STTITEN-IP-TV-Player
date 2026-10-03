@@ -55,11 +55,13 @@ class TvApiDelegate @Inject constructor(
             .scheme("http")
             .host(host)
             .port(port)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
 
         api = builder
             .baseUrl(baseUrl)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
             .create()
 
         val request = Request.Builder()
@@ -67,9 +69,11 @@ class TvApiDelegate @Inject constructor(
                 baseUrl
                     .newBuilder("say_hello")!!
                     .addQueryParameter("model", publisher.model)
-                    .build()
+                    .fallbackToDestructiveMigration()
+        .build()
             )
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
 
         val listener = object : WebSocketListener() {
             override fun onOpen(webSocket: WebSocket, response: Response) {

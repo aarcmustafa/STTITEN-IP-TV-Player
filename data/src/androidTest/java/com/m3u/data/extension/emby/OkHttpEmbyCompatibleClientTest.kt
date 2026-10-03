@@ -127,14 +127,16 @@ class OkHttpEmbyCompatibleClientTest {
 
         target.enqueue(MockResponse(body = "stream"))
         OkHttpClient.Builder()
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
             .newCall(
                 okhttp3.Request.Builder()
                     .url(playback.url)
                     .apply {
                         playback.headers.forEach { (name, value) -> header(name, value) }
                     }
-                    .build()
+                    .fallbackToDestructiveMigration()
+        .build()
             )
             .execute()
             .close()
@@ -244,13 +246,15 @@ class OkHttpEmbyCompatibleClientTest {
                     }
                 }
             )
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         val server = server()
         server.enqueue(
             MockResponse.Builder()
                 .body(EMPTY_CHANNEL_RESPONSE)
                 .throttleBody(1, 5, TimeUnit.SECONDS)
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
         )
         val client = OkHttpEmbyCompatibleClient(
             okHttpClient = baseClient,
@@ -413,7 +417,8 @@ class OkHttpEmbyCompatibleClientTest {
             MockResponse.Builder()
                 .body(EMPTY_CHANNEL_RESPONSE)
                 .throttleBody(1, 5, TimeUnit.SECONDS)
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
         )
         val client = OkHttpEmbyCompatibleClient(
             okHttpClient = OkHttpClient(),

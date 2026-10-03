@@ -530,7 +530,8 @@ class PlayerManagerImpl @Inject constructor(
             .buildUpon()
             .setOverrideForType(override)
             .setTrackTypeDisabled(type, false)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
     }
 
     override fun clearTrack(type: @C.TrackType Int) {
@@ -543,7 +544,8 @@ class PlayerManagerImpl @Inject constructor(
         } else {
             builder.setTrackTypeDisabled(type, false)
         }
-        currentPlayer.trackSelectionParameters = builder.build()
+        currentPlayer.trackSelectionParameters = builder.fallbackToDestructiveMigration()
+        .build()
     }
 
     override val cacheSpace: Flow<Long> = flow {
@@ -597,12 +599,14 @@ class PlayerManagerImpl @Inject constructor(
         .setRenderersFactory(renderersFactory)
         .setTrackSelector(createTrackSelector(tunneling))
         .setHandleAudioBecomingNoisy(true)
+        .fallbackToDestructiveMigration()
         .build()
         .apply {
             val attributes = AudioAttributes.Builder()
                 .setUsage(C.USAGE_MEDIA)
                 .setContentType(C.AUDIO_CONTENT_TYPE_MOVIE)
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
             setAudioAttributes(attributes, true)
             playWhenReady = true
             addListener(listener)
@@ -897,9 +901,11 @@ class PlayerManagerImpl @Inject constructor(
 //                        .setRequestedVideoEncoderSettings(
 //                            VideoEncoderSettings.Builder()
 //                                .
-//                                .build()
+//                                .fallbackToDestructiveMigration()
+        .build()
 //                        )
-                            .build()
+                            .fallbackToDestructiveMigration()
+        .build()
                     )
                     .addListener(
                         object : Transformer.Listener {
@@ -933,7 +939,8 @@ class PlayerManagerImpl @Inject constructor(
                             }
                         }
                     )
-                    .build()
+                    .fallbackToDestructiveMigration()
+        .build()
 
                 withContext(Dispatchers.Main) {
                     transformer.start(

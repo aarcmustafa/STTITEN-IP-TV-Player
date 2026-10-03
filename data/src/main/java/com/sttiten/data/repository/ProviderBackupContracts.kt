@@ -279,6 +279,7 @@ internal fun sanitizeProviderBaseUrl(value: String): String? {
         .password("")
         .query(null)
         .fragment(null)
+        .fallbackToDestructiveMigration()
         .build()
         .toString()
 }

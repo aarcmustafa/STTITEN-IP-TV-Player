@@ -128,11 +128,13 @@ internal fun extensionBackgroundWorkRequest(
                         NetworkType.NOT_REQUIRED
                     }
                 )
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
         )
         .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 10, TimeUnit.SECONDS)
         .addTag(extensionTag)
         .addTag(uniqueWorkName)
+        .fallbackToDestructiveMigration()
         .build()
 }
 

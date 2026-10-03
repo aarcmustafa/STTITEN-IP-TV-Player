@@ -105,7 +105,8 @@ class SubscriptionWorker @AssistedInject constructor(
                                     .setContentText(findChannelProgressContentText(count))
                                     .setActions(cancelAction)
                                     .setOngoing(true)
-                                    .build()
+                                    .fallbackToDestructiveMigration()
+        .build()
                                 notificationManager.notify(notificationId, notification)
                             }
 
@@ -135,7 +136,8 @@ class SubscriptionWorker @AssistedInject constructor(
                             val notification = createN10nBuilder()
                                 .setContentText(findProgrammeProgressContentText(count))
                                 .setActions(cancelAction)
-                                .build()
+                                .fallbackToDestructiveMigration()
+        .build()
                             notificationManager.notify(notificationId, notification)
                         }
                         .collect()
@@ -190,7 +192,8 @@ class SubscriptionWorker @AssistedInject constructor(
                             val notification = createN10nBuilder()
                                 .setContentText(findChannelProgressContentText(count))
                                 .setActions(cancelAction)
-                                .build()
+                                .fallbackToDestructiveMigration()
+        .build()
                             notificationManager.notify(notificationId, notification)
                         }
                         createN10nBuilder()
@@ -235,7 +238,8 @@ class SubscriptionWorker @AssistedInject constructor(
     }
 
     override suspend fun getForegroundInfo(): ForegroundInfo {
-        return ForegroundInfo(notificationId, createN10nBuilder().build())
+        return ForegroundInfo(notificationId, createN10nBuilder().fallbackToDestructiveMigration()
+        .build())
     }
 
     private fun createN10nBuilder(): Notification.Builder =
@@ -273,7 +277,8 @@ class SubscriptionWorker @AssistedInject constructor(
             findCancelActionTitle(),
             workManager.createCancelPendingIntent(id)
         )
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
     }
     private val retryAction: Notification.Action by lazy {
         Notification.Action.Builder(
@@ -289,7 +294,8 @@ class SubscriptionWorker @AssistedInject constructor(
                 PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
             )
         )
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
     }
 
     companion object {
@@ -340,11 +346,13 @@ class SubscriptionWorker @AssistedInject constructor(
                         setConstraints(
                             Constraints.Builder()
                                 .setRequiredNetworkType(NetworkType.CONNECTED)
-                                .build()
+                                .fallbackToDestructiveMigration()
+        .build()
                         )
                     }
                 }
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
             if (localSource) {
                 enqueuePersistedUriWork(
                     workManager = workManager,
@@ -388,9 +396,11 @@ class SubscriptionWorker @AssistedInject constructor(
                 .setConstraints(
                     Constraints.Builder()
                         .setRequiredNetworkType(NetworkType.CONNECTED)
-                        .build()
+                        .fallbackToDestructiveMigration()
+        .build()
                 )
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
             workManager.enqueueUniqueWork(
                 workTag,
                 ExistingWorkPolicy.REPLACE,
@@ -464,9 +474,11 @@ class SubscriptionWorker @AssistedInject constructor(
                 .setConstraints(
                     Constraints.Builder()
                         .setRequiredNetworkType(NetworkType.CONNECTED)
-                        .build()
+                        .fallbackToDestructiveMigration()
+        .build()
                 )
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
             workManager.enqueueUniqueWork(
                 workTag,
                 ExistingWorkPolicy.REPLACE,

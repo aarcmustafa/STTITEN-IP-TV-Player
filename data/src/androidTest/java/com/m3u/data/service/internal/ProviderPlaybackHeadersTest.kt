@@ -151,7 +151,8 @@ class ProviderPlaybackHeadersTest {
                     }
                 }
             )
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
             .withProviderPlaybackHeaders(
             entryUrl = approved.url("/master.m3u8").toString(),
             headers = emptyMap(),
@@ -183,6 +184,7 @@ class ProviderPlaybackHeadersTest {
         .url(url)
         .header("Range", "bytes=1024-")
         .header("User-Agent", "M3UAndroid/player")
+        .fallbackToDestructiveMigration()
         .build()
 
     private fun server(): MockWebServer = MockWebServer().also { server ->

@@ -16,7 +16,8 @@ class ParserUtils(
     @OptIn(ExperimentalSerializationApi::class)
     suspend inline fun <reified T> newCall(url: String): T? = withContext(Dispatchers.IO) {
         okHttpClient.newCall(
-            Request.Builder().url(url).build()
+            Request.Builder().url(url).fallbackToDestructiveMigration()
+        .build()
         )
             .execute()
             .takeIf { it.isSuccessful }
@@ -29,7 +30,8 @@ class ParserUtils(
     suspend inline fun <reified T> newCallOrThrow(url: String): T =
         withContext(Dispatchers.IO) {
             okHttpClient.newCall(
-                Request.Builder().url(url).build()
+                Request.Builder().url(url).fallbackToDestructiveMigration()
+        .build()
             )
                 .execute()
                 .takeIf { it.isSuccessful }!!
@@ -40,7 +42,8 @@ class ParserUtils(
 
     @OptIn(ExperimentalSerializationApi::class)
     inline fun <reified T> newSequenceCall(url: String): Sequence<T> = okHttpClient.newCall(
-        Request.Builder().url(url).build()
+        Request.Builder().url(url).fallbackToDestructiveMigration()
+        .build()
     )
         .execute()
         .takeIf { it.isSuccessful }

@@ -226,7 +226,8 @@ internal class ProgrammeRepositoryImpl @Inject constructor(
     private fun downloadProgrammes(epgUrl: String): Flow<EpgProgramme> = channelFlow {
         val request = Request.Builder()
             .url(epgUrl)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
 
         okHttpClient.newCall(request).execute().use { response ->
             if (!response.isSuccessful) {

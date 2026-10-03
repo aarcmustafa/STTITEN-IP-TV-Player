@@ -70,7 +70,8 @@ internal class MediaRepositoryImpl @Inject constructor(
         val loader = Coil.imageLoader(context)
         val request: ImageRequest = ImageRequest.Builder(context)
             .data(url)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         when (val result = loader.execute(request)) {
             is SuccessResult -> result.drawable
             is ErrorResult -> throw result.throwable

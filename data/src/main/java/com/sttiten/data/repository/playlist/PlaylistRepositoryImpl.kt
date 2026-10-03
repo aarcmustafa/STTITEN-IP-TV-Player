@@ -1393,7 +1393,8 @@ internal class PlaylistRepositoryImpl @Inject constructor(
     private fun openNetworkInput(url: String): InputStream {
         val request = Request.Builder()
             .url(url)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         val response = okHttpClient.newCall(request).execute()
         if (!response.isSuccessful) {
             response.close()

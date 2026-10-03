@@ -47,8 +47,10 @@ class HostNetworkBrokerSecurityTest {
                     }
                     """.trimIndent().toResponseBody()
                 )
-                .build()
-        }.build()
+                .fallbackToDestructiveMigration()
+        .build()
+        }.fallbackToDestructiveMigration()
+        .build()
         val fixture = accountFixture(client)
 
         assertFails {
@@ -146,8 +148,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body(serverBody.toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
 
         val response = fixture.broker.execute(
@@ -175,8 +179,10 @@ class HostNetworkBrokerSecurityTest {
                                 """{"accessToken":"fresh-token","nextPageToken":"page-token"}"""
                         ).toResponseBody()
                     )
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
 
         val response = fixture.broker.execute(
@@ -202,8 +208,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body(serverBody.toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
 
         val response = fixture.broker.execute(
@@ -240,8 +248,10 @@ class HostNetworkBrokerSecurityTest {
                         }
                         """.trimIndent().toResponseBody()
                     )
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
 
         val response = fixture.broker.execute(
@@ -291,8 +301,10 @@ class HostNetworkBrokerSecurityTest {
                     """{"token":"secret-token","user":"opaque-user","value":"safe"}"""
                         .toResponseBody()
                 )
-                .build()
-        }.build()
+                .fallbackToDestructiveMigration()
+        .build()
+        }.fallbackToDestructiveMigration()
+        .build()
         val fixture = accountFixture(client)
         val credential = BrokerValue.Secret(
             SecretReference(CredentialHandle("persistent:account-token"))
@@ -353,8 +365,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body("""{"secret-token":"value"}""".toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
 
         val response = fixture.broker.execute(
@@ -399,8 +413,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body(responseBodies.removeFirst().toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
         val request = BrokeredHttpRequest(
             method = "GET",
@@ -450,8 +466,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body("""{"secret-token":"first","***":"second"}""".toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
 
         val failure = brokerFailure {
@@ -485,8 +503,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body("abcde".toResponseBody())
-                    .build()
-            }.build(),
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build(),
             primaryCredential = "ab",
             userId = "bcde",
         )
@@ -528,8 +548,10 @@ class HostNetworkBrokerSecurityTest {
                 .code(200)
                 .message("OK")
                 .body(("\uFEFF" + """{"accessToken":"captured-token"}""").toResponseBody())
-                .build()
-        }.build()
+                .fallbackToDestructiveMigration()
+        .build()
+        }.fallbackToDestructiveMigration()
+        .build()
         val vault = FakeCredentialVault()
         val registry = ActiveExtensionPrincipalRegistry().apply { activate(PRINCIPAL) }
         val store = scopeStore(vault, registry)
@@ -603,8 +625,10 @@ class HostNetworkBrokerSecurityTest {
                 .message("Found")
                 .header("Location", "https://evil.example/token")
                 .body("".toResponseBody())
-                .build()
-        }.build()
+                .fallbackToDestructiveMigration()
+        .build()
+        }.fallbackToDestructiveMigration()
+        .build()
         val fixture = accountFixture(client)
 
         assertFails {
@@ -626,7 +650,8 @@ class HostNetworkBrokerSecurityTest {
             }
             cancellationObserved.set(true)
             throw IOException("cancelled")
-        }.build()
+        }.fallbackToDestructiveMigration()
+        .build()
         val fixture = accountFixture(client)
 
         assertFails {
@@ -651,7 +676,8 @@ class HostNetworkBrokerSecurityTest {
         val networkFixture = accountFixture(
             OkHttpClient.Builder().addInterceptor {
                 throw IOException(SECRET_FAILURE_MESSAGE)
-            }.build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
 
         val networkFailure = brokerFailure {
@@ -675,8 +701,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body("response-is-too-large".toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
 
         val sizeFailure = brokerFailure {
@@ -703,8 +731,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body("x".repeat(721 * 1024).toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
 
         val failure = brokerFailure {
@@ -733,8 +763,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body(deeplyNestedBody.toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
         val ordinaryFailure = brokerFailure {
             accountFixture.broker.execute(
@@ -763,8 +795,10 @@ class HostNetworkBrokerSecurityTest {
                         .code(200)
                         .message("OK")
                         .body(deeplyNestedBody.toResponseBody())
-                        .build()
-                }.build(),
+                        .fallbackToDestructiveMigration()
+        .build()
+                }.fallbackToDestructiveMigration()
+        .build(),
                 store,
             ).authenticate(
                 scope = authenticationScope,
@@ -791,8 +825,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body("{}".toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
         val secret = BrokerValue.Secret(
             SecretReference(CredentialHandle("persistent:account-token"))
@@ -829,8 +865,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body(responseBody.toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
         )
         val secret = BrokerValue.Secret(
             SecretReference(CredentialHandle("persistent:account-token"))
@@ -873,8 +911,10 @@ class HostNetworkBrokerSecurityTest {
                     """{"accessToken":"must-remain-opaque","server_id":"server-1","user_id":"user-1"}"""
                         .toResponseBody()
                 )
-                .build()
-        }.build()
+                .fallbackToDestructiveMigration()
+        .build()
+        }.fallbackToDestructiveMigration()
+        .build()
         val vault = FakeCredentialVault()
         val registry = ActiveExtensionPrincipalRegistry().apply { activate(PRINCIPAL) }
         val store = scopeStore(vault, registry)
@@ -976,8 +1016,10 @@ class HostNetworkBrokerSecurityTest {
                     }
                     """.trimIndent().toResponseBody()
                 )
-                .build()
-        }.build()
+                .fallbackToDestructiveMigration()
+        .build()
+        }.fallbackToDestructiveMigration()
+        .build()
         val vault = FakeCredentialVault()
         val registry = ActiveExtensionPrincipalRegistry().apply { activate(PRINCIPAL) }
         val store = scopeStore(vault, registry)
@@ -1045,8 +1087,10 @@ class HostNetworkBrokerSecurityTest {
                     .code(200)
                     .message("OK")
                     .body(responseBodies.removeFirst().toResponseBody())
-                    .build()
-            }.build()
+                    .fallbackToDestructiveMigration()
+        .build()
+            }.fallbackToDestructiveMigration()
+        .build()
             val vault = FakeCredentialVault()
             val registry = ActiveExtensionPrincipalRegistry().apply { activate(PRINCIPAL) }
             val store = scopeStore(vault, registry)
@@ -1101,8 +1145,10 @@ class HostNetworkBrokerSecurityTest {
                 .code(200)
                 .message("OK")
                 .body("""{"value":"safe"}""".toResponseBody())
-                .build()
-        }.build()
+                .fallbackToDestructiveMigration()
+        .build()
+        }.fallbackToDestructiveMigration()
+        .build()
         val vault = FakeCredentialVault()
         val registry = ActiveExtensionPrincipalRegistry().apply { activate(PRINCIPAL) }
         val store = scopeStore(vault, registry)
@@ -1136,8 +1182,10 @@ class HostNetworkBrokerSecurityTest {
                     """{"credential":"captured"}"""
                         .toResponseBody()
                 )
-                .build()
-        }.build()
+                .fallbackToDestructiveMigration()
+        .build()
+        }.fallbackToDestructiveMigration()
+        .build()
         val vault = FakeCredentialVault()
         val registry = ActiveExtensionPrincipalRegistry().apply { activate(PRINCIPAL) }
         val store = scopeStore(vault, registry)
@@ -1183,8 +1231,10 @@ class HostNetworkBrokerSecurityTest {
                     """{"message":"Invalid credentials","accessToken":"must-not-capture"}"""
                         .toResponseBody()
                 )
-                .build()
-        }.build()
+                .fallbackToDestructiveMigration()
+        .build()
+        }.fallbackToDestructiveMigration()
+        .build()
         val vault = FakeCredentialVault()
         val registry = ActiveExtensionPrincipalRegistry().apply { activate(PRINCIPAL) }
         val store = scopeStore(vault, registry)

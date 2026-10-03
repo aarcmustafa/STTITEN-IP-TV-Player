@@ -41,7 +41,8 @@ class ExtensionHookBrokerScopeProviderTest {
             .commit()
         database = Room.inMemoryDatabaseBuilder(context, M3UDatabase::class.java)
             .allowMainThreadQueries()
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         principalRegistry = ActiveExtensionPrincipalRegistry().apply {
             activate(PRINCIPAL)
         }

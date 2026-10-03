@@ -25,7 +25,8 @@ class ProviderAccountOwnerStoreTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         database = Room.inMemoryDatabaseBuilder(context, M3UDatabase::class.java)
             .allowMainThreadQueries()
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         store = ProviderAccountOwnerStore(database, database.providerDao())
     }
 

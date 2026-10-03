@@ -74,7 +74,8 @@ class Migration23To24Test {
             .allowMainThreadQueries()
             .addMigrations(DatabaseMigrations.MIGRATION_24_25)
             .addMigrations(DatabaseMigrations.MIGRATION_25_26)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         val migrated = database.openHelper.writableDatabase
 
         migrated.query(

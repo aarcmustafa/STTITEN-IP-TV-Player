@@ -18,7 +18,8 @@ internal fun M3UData.toChannel(
                 .path(
                     paths.joinToString("/", "", "")
                 )
-                .build()
+                .fallbackToDestructiveMigration()
+        .build()
                 .toString()
         }
     }

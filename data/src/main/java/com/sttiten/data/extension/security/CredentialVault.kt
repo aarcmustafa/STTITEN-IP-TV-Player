@@ -348,7 +348,8 @@ internal class AndroidKeystoreCredentialVault private constructor(
                     .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)
                     .setKeySize(256)
                     .setRandomizedEncryptionRequired(true)
-                    .build()
+                    .fallbackToDestructiveMigration()
+        .build()
             )
             generateKey()
         }

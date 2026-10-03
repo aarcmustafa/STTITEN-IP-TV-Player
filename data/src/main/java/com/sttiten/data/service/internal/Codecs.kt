@@ -19,7 +19,8 @@ object Codecs {
     fun getThumbnail(context: Context, uri: Uri): Bitmap? {
         val mediaInfo = MediaInfoBuilder()
             .from(context, uri)
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         val frame = mediaInfo?.getFrame()
         mediaInfo?.release()
         return frame

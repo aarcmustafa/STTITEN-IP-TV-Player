@@ -164,7 +164,8 @@ internal fun extensionContributionImmediateRequest(
     .setConstraints(extensionContributionConstraints())
     .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 10, TimeUnit.SECONDS)
     .addTag(extensionContributionWorkTag(workKey))
-    .build()
+    .fallbackToDestructiveMigration()
+        .build()
 
 internal fun extensionContributionPeriodicRequest(
     workKey: String,
@@ -180,11 +181,13 @@ internal fun extensionContributionPeriodicRequest(
     .setConstraints(extensionContributionConstraints())
     .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 10, TimeUnit.SECONDS)
     .addTag(extensionContributionWorkTag(workKey))
-    .build()
+    .fallbackToDestructiveMigration()
+        .build()
 
 private fun extensionContributionConstraints(): Constraints = Constraints.Builder()
     .setRequiredNetworkType(NetworkType.CONNECTED)
-    .build()
+    .fallbackToDestructiveMigration()
+        .build()
 
 internal fun extensionContributionWorkKey(playlistUrl: String): String =
     MessageDigest.getInstance("SHA-256")

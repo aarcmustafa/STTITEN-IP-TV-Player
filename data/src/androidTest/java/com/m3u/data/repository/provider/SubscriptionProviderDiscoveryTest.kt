@@ -186,7 +186,8 @@ class SubscriptionProviderDiscoveryTest {
         } ?: context
         val database = Room.inMemoryDatabaseBuilder(context, M3UDatabase::class.java)
             .allowMainThreadQueries()
-            .build()
+            .fallbackToDestructiveMigration()
+        .build()
         try {
             val runtime = ExtensionRuntime(ExtensionApiVersions.Current)
             val credentialVault = AndroidKeystoreCredentialVault(
