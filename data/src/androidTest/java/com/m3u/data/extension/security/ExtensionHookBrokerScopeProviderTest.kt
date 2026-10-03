@@ -25,7 +25,6 @@ class ExtensionHookBrokerScopeProviderTest {
     private lateinit var provider: ExtensionHookBrokerScopeProvider
     private lateinit var settingStore: ExtensionSettingStore
     private lateinit var extensionSecretStore: RecordingExtensionSecretStore
-//     private lateinit var trustStore: ExtensionTrustStore
     private lateinit var registrationLease: ExtensionRegistrationLease
 
     @Before
@@ -77,7 +76,6 @@ class ExtensionHookBrokerScopeProviderTest {
         registrationLease = requireNotNull(
             runtime.captureRegistration(NETWORK_EXTENSION_ID)
         ).lease
-//         trustStore = ExtensionTrustStore(context)
         provider = ExtensionHookBrokerScopeProvider(
             principalRegistry = principalRegistry,
             providerDao = database.providerDao(),

@@ -10,7 +10,6 @@ internal class ExtensionHookBrokerScopeProvider @Inject constructor(
     private val providerDao: ProviderDao,
     private val scopeStore: ProviderBrokerScopeStore,
     private val settingStore: ExtensionSettingStore,
-//     private val trustStore: ExtensionTrustStore,
 ) : ExtensionBrokerScopeProvider {
     override suspend fun open(
         request: ExtensionBrokerScopeRequest,

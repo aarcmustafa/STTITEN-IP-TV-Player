@@ -96,15 +96,11 @@ internal abstract class ExtensionBindingsModule {
 internal object ExtensionRuntimeModule {
     @Provides
     @Singleton
-//     fun provideAndroidExtensionDiscovery(
         @ApplicationContext context: Context,
-//     ) = AndroidExtensionDiscovery(context)
 
     @Provides
     @Singleton
-//     fun provideExtensionTrustStore(
         @ApplicationContext context: Context,
-//     ) = ExtensionTrustStore(context)
 
     @Provides
     @Singleton
@@ -114,7 +110,6 @@ internal object ExtensionRuntimeModule {
     @Singleton
     fun provideExtensionRuntime(
         provider: EmbyCompatibleProvider,
-//         trustStore: ExtensionTrustStore,
         settingsProvider: ExtensionSettingsProvider,
         brokerScopeProvider: ExtensionBrokerScopeProvider,
         invocationPolicy: InvocationPolicy,
