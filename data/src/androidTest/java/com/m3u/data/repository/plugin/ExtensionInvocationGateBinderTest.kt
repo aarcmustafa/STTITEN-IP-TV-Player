@@ -26,10 +26,12 @@ class ExtensionInvocationGateBinderTest {
         context.settings.edit { preferences ->
             preferences[PreferencesKeys.EXTERNAL_EXTENSIONS] = true
         }
+//         val service = AndroidExtensionDiscovery(context).discover().single { candidate ->
             candidate.packageName == REFERENCE_EXTENSION_PACKAGE &&
                 candidate.serviceName == REFERENCE_EXTENSION_SERVICE
         }
         assertNull(service.incompatibilityReason)
+//         val trustStore = ExtensionTrustStore(context)
         val principalRegistry = ActiveExtensionPrincipalRegistry()
         val connector = AndroidExtensionPluginTransportConnector(
             context = context,

@@ -31,6 +31,7 @@ internal class WorkManagerExtensionContributionScheduler internal constructor(
     constructor(
         workManager: WorkManager,
         runtime: ExtensionRuntime,
+//         trustStore: ExtensionTrustStore,
     ) : this(
         operations = WorkManagerExtensionContributionWorkOperations(workManager),
         hasEnabledContributor = {
@@ -95,6 +96,7 @@ internal class WorkManagerExtensionContributionScheduler internal constructor(
 }
 
 private fun ExtensionRuntime.hasEnabledContributionExtension(
+//     trustStore: ExtensionTrustStore,
 ): Boolean = listOf(
     HostHookSpecs.MetadataEnrichment.hook,
     HostHookSpecs.EpgRefresh.hook,

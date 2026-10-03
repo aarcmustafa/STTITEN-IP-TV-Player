@@ -39,6 +39,7 @@ import org.junit.runner.RunWith
 class ExtensionPluginRepositoryLifecycleTest {
     private lateinit var context: Context
     private lateinit var database: M3UDatabase
+//     private lateinit var trustStore: ExtensionTrustStore
     private lateinit var settingStore: ExtensionSettingStore
     private val repositories = mutableListOf<ExtensionPluginRepositoryImpl>()
 
@@ -53,6 +54,7 @@ class ExtensionPluginRepositoryLifecycleTest {
         database = Room.inMemoryDatabaseBuilder(context, M3UDatabase::class.java)
             .allowMainThreadQueries()
             .build()
+//         trustStore = ExtensionTrustStore(context)
         settingStore = ExtensionSettingStore(context, NoOpSecretStore)
     }
 
